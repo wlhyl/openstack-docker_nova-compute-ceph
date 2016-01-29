@@ -110,6 +110,9 @@ CRUDINI='/usr/bin/crudini'
     $CRUDINI --del /etc/nova/nova.conf libvirt
     $CRUDINI --set /etc/nova/nova.conf libvirt virt_type kvm
     $CRUDINI --set /etc/nova/nova.conf libvirt cpu_mode host-passthrough
+    # 配置live migrate flag
+    $CRUDINI --set /etc/nova/nova.conf libvirt live_migration_flag VIR_MIGRATE_UNDEFINE_SOURCE,VIR_MIGRATE_PEER2PEER,VIR_MIGRATE_LIVE,VIR_MIGRATE_TUNNELLED
+    $CRUDINI --set /etc/nova/nova.conf libvirt live_migration_uri qemu+tcp://%s/system
     # 禁用密码注入, 添加直接从rbd启动支持
     $CRUDINI --set /etc/nova/nova.conf libvirt inject_password False
     $CRUDINI --set /etc/nova/nova.onf libvirt inject_key False
