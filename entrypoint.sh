@@ -109,6 +109,7 @@ CRUDINI='/usr/bin/crudini'
     $CRUDINI --set /etc/nova/nova.conf DEFAULT compute_driver libvirt.LibvirtDriver
     $CRUDINI --del /etc/nova/nova.conf libvirt
     $CRUDINI --set /etc/nova/nova.conf libvirt virt_type kvm
+    $CRUDINI --set /etc/nova/nova.conf libvirt cpu_mode host-passthrough
     # 禁用密码注入, 添加直接从rbd启动支持
     $CRUDINI --set /etc/nova/nova.conf libvirt inject_password False
     $CRUDINI --set /etc/nova/nova.onf libvirt inject_key False
