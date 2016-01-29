@@ -104,7 +104,9 @@ CRUDINI='/usr/bin/crudini'
     $CRUDINI --set /etc/nova/nova.conf glance host $GLANCE_HOST
 
     $CRUDINI --set /etc/nova/nova.conf oslo_concurrency lock_path /var/lib/nova/tmp
-
+    
+    # 设置compute_drive 为libvirt
+    $CRUDINI --set /etc/nova/nova.conf DEFAULT compute_driver libvirt.LibvirtDriver
     $CRUDINI --del /etc/nova/nova.conf libvirt
     $CRUDINI --set /etc/nova/nova.conf libvirt virt_type kvm
     # 禁用密码注入, 添加直接从rbd启动支持
