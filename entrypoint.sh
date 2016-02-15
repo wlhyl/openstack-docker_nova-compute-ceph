@@ -115,7 +115,7 @@ CRUDINI='/usr/bin/crudini'
     $CRUDINI --set /etc/nova/nova.conf libvirt live_migration_uri qemu+tcp://%s/system
     # 禁用密码注入, 添加直接从rbd启动支持
     $CRUDINI --set /etc/nova/nova.conf libvirt inject_password False
-    $CRUDINI --set /etc/nova/nova.onf libvirt inject_key False
+    $CRUDINI --set /etc/nova/nova.conf libvirt inject_key False
     $CRUDINI --set /etc/nova/nova.conf libvirt inject_partition -2
     $CRUDINI --set /etc/nova/nova.conf libvirt disk_cachemodes \"network=writeback\"
     $CRUDINI --set /etc/nova/nova.conf libvirt images_type rbd
